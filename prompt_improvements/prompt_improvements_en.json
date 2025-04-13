@@ -1,0 +1,412 @@
+[
+  {
+    "original": "бэкенде",
+    "translated": "backend",
+    "reason": "The term 'бэкенд' should be translated as 'backend' according to the glossary, but it is not marked as an error."
+  },
+  {
+    "original": "AI-агентов",
+    "translated": "AI agents",
+    "reason": "The term 'AI-агентов' should be consistently translated as 'AI agents' according to the glossary, but it is not marked as an error."
+  },
+  {
+    "original": "продакшн",
+    "translated": "production",
+    "reason": "The term 'продакшн' should be translated as 'production' according to the glossary, but it is not marked as an error."
+  },
+  {
+    "original": "бэкенд",
+    "translated": "backend",
+    "reason": "Term 'бэкенд' should be translated as 'backend' according to the glossary."
+  },
+  {
+    "original": "вайб-кодинг",
+    "translated": "vibe coding",
+    "reason": "Term 'вайб-кодинг' should be translated as 'vibe coding' according to the glossary."
+  },
+  {
+    "original": "Даты выхода модулей",
+    "translated": "Module Release Dates",
+    "reason": "The term 'модулей' should be consistently translated as 'modules' according to the glossary."
+  },
+  {
+    "original": "Дата выхода",
+    "translated": "Release Date",
+    "reason": "The term 'выхода' should be consistently translated as 'release' according to the glossary."
+  },
+  {
+    "original": "промпт",
+    "translated": "prompt",
+    "reason": "Term 'промпт' should be translated as 'system prompt' to match the glossary context."
+  },
+  {
+    "original": "токенов",
+    "translated": "tokens",
+    "reason": "Term 'токен' should be translated as 'token' to match the glossary."
+  },
+  {
+    "original": "фронтматтер",
+    "translated": "frontmatter",
+    "reason": "Term 'фронтматтер' should be translated as 'frontmatter' to match the glossary."
+  },
+  {
+    "original": "Промпт-инжиниринг",
+    "translated": "Prompt engineering",
+    "reason": "The term 'промпт-инжиниринг' should be translated as 'prompt engineering' according to the glossary."
+  },
+  {
+    "original": "фронтенд",
+    "translated": "frontend",
+    "reason": "The term 'фронтенд' should be translated as 'frontend' according to the glossary."
+  },
+  {
+    "original": "токен",
+    "translated": "tokens",
+    "reason": "The term 'токен' should be translated as 'token' according to the glossary."
+  },
+  {
+    "original": "промпт-инжиниринг",
+    "translated": "prompt engineering",
+    "reason": "The term 'промпт-инжиниринг' should be translated as 'prompt engineering' according to the glossary."
+  },
+  {
+    "original": "докер",
+    "translated": "Docker",
+    "reason": "The term 'докер' should be translated as 'Docker' according to the glossary."
+  },
+  {
+    "original": "ТЗ для разработчиков",
+    "translated": "specifications for developers",
+    "reason": "The term 'ТЗ' should be translated as 'technical specifications' instead of 'specifications'."
+  },
+  {
+    "original": "токен",
+    "translated": "token",
+    "reason": "Term 'токен' should be translated as 'token' according to the glossary."
+  },
+  {
+    "original": "промпт-инжиниринг",
+    "translated": "Prompt Engineering",
+    "reason": "The term 'промпт-инжиниринг' should be translated as 'prompt engineering' to match the glossary."
+  },
+  {
+    "original": "промпт-инжекции наглядно",
+    "translated": "Prompt injections visually",
+    "reason": "The term 'промпт-инжекции' should be translated as 'prompt injections' to match the glossary."
+  },
+  {
+    "original": "промпт-инъекция",
+    "translated": "prompt injection",
+    "reason": "The term 'промпт-инъекция' should be translated as 'prompt injection' to match the glossary."
+  },
+  {
+    "original": "Senior-уровень",
+    "translated": "Senior Level",
+    "reason": "Термин 'Senior-уровень' должен быть переведен как 'Senior level' для соответствия с глоссарием."
+  },
+  {
+    "original": "Карта секции",
+    "translated": "Section map",
+    "reason": "Термин 'Карта секции' должен быть переведен как 'Section map' для соответствия с глоссарием."
+  },
+  {
+    "original": "Содержание раздела",
+    "translated": "Section Contents",
+    "reason": "Термин 'Содержание раздела' должен быть переведен как 'Section Contents' для соответствия с глоссарием."
+  },
+  {
+    "original": "продвинутый промптинг",
+    "translated": "Advanced Prompting",
+    "reason": "The term 'промптинг' should match the glossary term 'prompt engineering', but it was translated as 'Prompting'."
+  },
+  {
+    "original": "Улучшение материалов в блоке про легкую бэкенд-разработку",
+    "translated": "Improving materials in the block on lightweight backend development",
+    "reason": "The term 'бэкенд' should match the glossary term 'backend', but it was translated as 'backend' instead of 'backend development'."
+  },
+  {
+    "original": "промышленных инструментов",
+    "translated": "industrial tools",
+    "reason": "The term 'промышленных' should match the glossary term 'продакшн', which is not reflected in the translation."
+  },
+  {
+    "original": "промышленных фреймворков",
+    "translated": "industrial frameworks",
+    "reason": "The term 'промышленных' should match the glossary term 'продакшн', which is not reflected in the translation."
+  },
+  {
+    "original": "структур данных (АиСД)",
+    "translated": "data structures (ADS)",
+    "reason": "The term 'АиСД' should be translated as 'ADS' to match the glossary."
+  },
+  {
+    "original": "AI Агентах",
+    "translated": "AI Agents",
+    "reason": "The term 'AI Агентах' should be translated as 'AI Agents' to match the glossary."
+  },
+  {
+    "original": "промпты для ChatGPT",
+    "translated": "Prompts for ChatGPT",
+    "reason": "The term 'промпты' should be translated as 'prompts' to match the glossary."
+  },
+  {
+    "original": "токенов LLM",
+    "translated": "tokens in LLM",
+    "reason": "The term 'токенов' should be translated as 'tokens' to match the glossary."
+  },
+  {
+    "original": "Бэкенд разработка",
+    "translated": "Backend Development",
+    "reason": "The term 'бэкенд' should be translated as 'backend' according to the glossary."
+  },
+  {
+    "original": "бэкграунд",
+    "translated": "background",
+    "reason": "Термин 'бэкграунд' должен быть переведен как 'background', но в контексте следует использовать 'background' в соответствии с глоссарием."
+  },
+  {
+    "original": "программируйте в Cursor AI",
+    "translated": "program in Cursor AI",
+    "reason": "Термин 'программируйте' должен быть переведен как 'program' в соответствии с глоссарием."
+  },
+  {
+    "original": "токенах",
+    "translated": "tokens",
+    "reason": "The term 'токен' should be translated as 'token' according to the glossary, but it is not consistently used in the translation."
+  },
+  {
+    "original": "вайб-кодинг",
+    "translated": "vibe-coding",
+    "reason": "The term 'вайб-кодинг' should be translated as 'vibe coding' to match the glossary."
+  },
+  {
+    "original": "промышленные, архитектурно-сложные сервисы zero-shot",
+    "translated": "industrial, architecturally complex services zero-shot",
+    "reason": "The term 'промышленные' should be translated as 'production' to match the glossary."
+  },
+  {
+    "original": "промпт",
+    "translated": "промпт",
+    "reason": "Термин 'промпт' должен быть переведен как 'prompt' согласно глоссарию."
+  },
+  {
+    "original": "микросервисы",
+    "translated": "microservices",
+    "reason": "Term 'микросервисы' should be translated as 'microservices' according to the glossary."
+  },
+  {
+    "original": "докер",
+    "translated": "docker",
+    "reason": "Term 'докер' should be translated as 'Docker' according to the glossary."
+  },
+  {
+    "original": "промышленного уровня",
+    "translated": "production level",
+    "reason": "The term 'продакшн' should be used instead of 'production' according to the glossary."
+  },
+  {
+    "original": "продакшн-промпты",
+    "translated": "Production prompts",
+    "reason": "Term 'продакшн' should be translated as 'production' according to the glossary."
+  },
+  {
+    "original": "Продакшн",
+    "translated": "production",
+    "reason": "The term 'Продакшн' is missing from the translation and should be included as 'production' to match the glossary."
+  },
+  {
+    "original": "AI Агенты",
+    "translated": "AI Agents",
+    "reason": "The term 'AI Агенты' should be translated as 'AI Agents' to match the glossary."
+  },
+  {
+    "original": "искусственного интеллекта",
+    "translated": "artificial intelligence",
+    "reason": "The term 'искусственного интеллекта' should be consistently translated as 'artificial intelligence' to match the glossary."
+  },
+  {
+    "original": "AI Agents",
+    "translated": "AI Agents",
+    "reason": "The term 'AI Agents' should be consistently translated as 'AI Agents' to match the glossary."
+  },
+  {
+    "original": "искусственного разума",
+    "translated": "artificial intelligence",
+    "reason": "The term 'искусственного разума' should be consistently translated as 'artificial intelligence' to match the glossary."
+  },
+  {
+    "original": "искусственный интеллект",
+    "translated": "artificial intelligence",
+    "reason": "The term 'искусственный интеллект' should be consistently translated as 'artificial intelligence' to match the glossary."
+  },
+  {
+    "original": "промышленного ИИ",
+    "translated": "industrial AI",
+    "reason": "The term 'промышленного ИИ' should be translated as 'industrial AI' to match the glossary."
+  },
+  {
+    "original": "AI-стартапов",
+    "translated": "AI startups",
+    "reason": "The term 'AI-стартапов' should be consistently translated as 'AI startups' according to the glossary."
+  },
+  {
+    "original": "Applied AI",
+    "translated": "Applied AI",
+    "reason": "The term 'Applied AI' should be consistently translated as 'Applied AI' according to the glossary."
+  },
+  {
+    "original": "ЗАВИСИМОСТЬ",
+    "translated": "DEPENDENCY",
+    "reason": "The term 'ЗАВИСИМОСТЬ' should be translated as 'dependency' in lowercase to match the glossary style."
+  },
+  {
+    "original": "AI-агентов",
+    "translated": "AI Agents",
+    "reason": "The term 'AI-агентов' should be consistently translated as 'AI agents' (lowercase 'agents') according to the glossary."
+  },
+  {
+    "original": "промптинг",
+    "translated": "prompting",
+    "reason": "Term 'промптинг' should be translated as 'prompt engineering' according to the glossary."
+  },
+  {
+    "original": "продакшн",
+    "translated": "production-ready",
+    "reason": "Term 'продакшн' should be translated as 'production' according to the glossary."
+  },
+  {
+    "original": "Релизы модулей",
+    "translated": "Module releases",
+    "reason": "The term 'модулей' should be translated as 'modules' to match the glossary."
+  },
+  {
+    "original": "промпты",
+    "translated": "prompts",
+    "reason": "Term 'промпт' should be translated as 'prompt' according to the glossary."
+  },
+  {
+    "original": "промпт-интуицию",
+    "translated": "prompt intuition",
+    "reason": "Term 'промпт-инжиниринг' should be translated as 'prompt engineering' according to the glossary."
+  },
+  {
+    "original": "фреймворков",
+    "translated": "frameworks",
+    "reason": "The term 'фреймворков' should be translated as 'frameworks' according to the glossary."
+  },
+  {
+    "original": "функциональные вызовы (function calling)",
+    "translated": "function calling",
+    "reason": "The term 'функциональные вызовы' should be translated as 'function calling' according to the glossary."
+  },
+  {
+    "original": "структурированный вывод",
+    "translated": "structured output",
+    "reason": "The term 'структурированный вывод' should be translated as 'structured output' according to the glossary."
+  },
+  {
+    "original": "промпт-инжинирингом",
+    "translated": "prompt engineering",
+    "reason": "The term 'промпт-инжинирингом' should be translated as 'prompt engineering' to match the glossary."
+  },
+  {
+    "original": "Карта секции",
+    "translated": "[Part 1 of the document]  Section map",
+    "reason": "Термин 'Карта секции' не соответствует глоссарию, где нет перевода для 'Section map'."
+  },
+  {
+    "original": "Материалы для опытных разработчиков когнитивных агентов.",
+    "translated": "Materials for experienced cognitive agent developers.",
+    "reason": "Термин 'опытных разработчиков когнитивных агентов' не соответствует глоссарию, где нет перевода для 'experienced cognitive agent developers'."
+  },
+  {
+    "original": "AI Agents",
+    "translated": "AI agents",
+    "reason": "Inconsistency in capitalization of 'Agents' which should match the glossary term."
+  },
+  {
+    "original": "контрибьютинг",
+    "translated": "Contributing",
+    "reason": "The term 'контрибьютинг' should be translated as 'contributing' according to the glossary."
+  },
+  {
+    "original": "контрибьюторов",
+    "translated": "contributors",
+    "reason": "The term 'контрибьюторов' should be translated as 'contributors' according to the glossary."
+  },
+  {
+    "original": "контрибьютинг - это процесс внесения вклада в открытый проект.",
+    "translated": "Contributing is the process of making a contribution to an open project.",
+    "reason": "The term 'контрибьютинг' should be translated as 'contributing' according to the glossary."
+  },
+  {
+    "original": "Продвинутый уровень",
+    "translated": "Advanced Level",
+    "reason": "The term 'Продвинутый уровень' should match the glossary term for consistency."
+  },
+  {
+    "original": "Оптимизация производительности",
+    "translated": "Performance optimization",
+    "reason": "The term 'производительность' should match the glossary term for consistency."
+  },
+  {
+    "original": "мультиагентов",
+    "translated": "multi-agents",
+    "reason": "The term 'мультиагентов' should be translated as 'multi-agent' to match the glossary."
+  },
+  {
+    "original": "инфру",
+    "translated": "infrastructure",
+    "reason": "The term 'инфру' should be translated as 'infrastructure' according to the glossary, but it is not listed in the provided glossary."
+  },
+  {
+    "original": "перплексити",
+    "translated": "perplexity",
+    "reason": "The term 'перплексити' should be translated as 'perplexity' according to the glossary, but it is not listed in the provided glossary."
+  },
+  {
+    "original": "СДВГ",
+    "translated": "ADHD",
+    "reason": "The term 'СДВГ' should be translated as 'ADHD' according to the glossary, but it is not listed in the provided glossary."
+  },
+  {
+    "original": "промышленные, архитектурно-сложные сервисы zero-shot.",
+    "translated": "production, architecturally complex services zero-shot.",
+    "reason": "The term 'продакшн' should be translated as 'production' according to the glossary, but 'промышленные' is not a correct match."
+  },
+  {
+    "original": "Облака и VPS",
+    "translated": "Clouds and VPS",
+    "reason": "The term 'VPS' should be translated as 'VPS' instead of being left in its original form."
+  },
+  {
+    "original": "Облака и Virtual Private Server",
+    "translated": "Clouds and Virtual Private Server",
+    "reason": "The term 'Virtual Private Server' should be translated as 'VPS' to maintain consistency with the glossary."
+  },
+  {
+    "original": "токены",
+    "translated": "tokens",
+    "reason": "The term 'токены' should be translated as 'tokens' but is not consistent with the glossary."
+  },
+  {
+    "original": "температуру",
+    "translated": "temperature",
+    "reason": "The term 'температуру' should be translated as 'temperature' but is not consistent with the glossary."
+  },
+  {
+    "original": "Продвинутые техники оптимизации",
+    "translated": "Advanced optimization techniques",
+    "reason": "Термин 'техники оптимизации' должен быть переведен как 'optimization techniques' для соответствия с глоссарием."
+  },
+  {
+    "original": "Масштабирование агентных систем",
+    "translated": "Scaling agent systems",
+    "reason": "Термин 'агентных' должен быть переведен как 'agent' в соответствии с глоссарием."
+  },
+  {
+    "original": "AI Agents",
+    "translated": "AI Becomes Accessible to Everyone",
+    "reason": "The term 'AI Agents' should be consistently translated as 'AI Agents' instead of being rephrased."
+  }
+]

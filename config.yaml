@@ -1,0 +1,100 @@
+# Конфигурация системы перевода
+
+# Общие настройки
+general:
+  max_tokens: 8000   # Максимальное количество токенов для разбиения
+  max_workers: 4     # Количество параллельных потоков
+
+# Настройки API
+api:
+  model_name: "gpt-4o-mini"
+  base_url: "https://proxy.merkulov.ai"
+
+# Настройки языков
+languages:
+  # Английский
+  en:
+    name: "English"
+    system_prompt: |
+      Translate the following markdown text from Russian to English.
+      Preserve all markdown formatting, code blocks, and structure.
+      Keep technical terms consistent throughout the translation.
+      Do not translate code snippets, variable names, or commands inside code blocks.
+      
+      IMPORTANT: Return ONLY the translated text without any explanations, comments, or additional information.
+      Do not include the original Russian text in your response.
+      Do not add any explanations about your translation process.
+    validation_prompt: |
+      You are an expert in validating translations. Check the quality of the translation according to the following glossary:
+      
+      Check:
+      1. Consistency with glossary terms (very important!) - mark terms that DO NOT match the glossary
+      2. Preservation of formatting
+      3. Translation accuracy
+      4. Preservation of technical terms
+      
+      IMPORTANT: Do not mark correctly translated terms as errors! For example, if the term 'промпт' is translated as 'prompt', and this matches the glossary - this is NOT an error.
+      
+      If you find REAL issues, return them in JSON format with these fields:
+      - file_path: the path to the file
+      - original: the problematic part in the source text
+      - translated: the problematic part in the translation
+      - reason: the reason for the issue
+
+  # Испанский  
+  es:
+    name: "Español"
+    system_prompt: |
+      Traduce el siguiente texto markdown del ruso al español.
+      Conserva todo el formato markdown, bloques de código y estructura.
+      Mantén los términos técnicos consistentes a lo largo de la traducción.
+      No traduzcas fragmentos de código, nombres de variables o comandos dentro de bloques de código.
+      
+      IMPORTANTE: Devuelve SOLO el texto traducido sin explicaciones, comentarios o información adicional.
+      No incluyas el texto original en ruso en tu respuesta.
+      No agregues explicaciones sobre tu proceso de traducción.
+    validation_prompt: |
+      Eres un experto en validación de traducciones. Verifica la calidad de la traducción según el siguiente glosario:
+      
+      Verifica:
+      1. Consistencia con los términos del glosario (¡muy importante!) - marca los términos que NO coinciden con el glosario
+      2. Preservación del formato
+      3. Precisión de la traducción
+      4. Preservación de términos técnicos
+      
+      IMPORTANTE: ¡No marques como errores los términos correctamente traducidos! Por ejemplo, si el término 'промпт' se traduce como 'prompt', y esto coincide con el glosario, NO es un error.
+      
+      Si encuentras problemas REALES, devuélvelos en formato JSON con estos campos:
+      - file_path: la ruta al archivo
+      - original: la parte problemática en el texto original
+      - translated: la parte problemática en la traducción
+      - reason: la razón del problema
+
+  # Китайский
+  zh:
+    name: "中文"
+    system_prompt: |
+      将以下markdown文本从俄语翻译成中文。
+      保留所有markdown格式、代码块和结构。
+      在整个翻译过程中保持技术术语的一致性。
+      不要翻译代码块中的代码片段、变量名或命令。
+      
+      重要提示：仅返回翻译后的文本，不要添加任何解释、评论或额外信息。
+      不要在回复中包含原始俄语文本。
+      不要添加关于您翻译过程的解释。
+    validation_prompt: |
+      您是翻译验证专家。请根据以下词汇表检查翻译质量：
+      
+      检查：
+      1. 与词汇表术语的一致性（非常重要！）- 标记与词汇表不匹配的术语
+      2. 格式保留
+      3. 翻译准确性
+      4. 技术术语的保留
+      
+      重要提示：不要将正确翻译的术语标记为错误！例如，如果术语"промпт"被翻译为"prompt"，并且这与词汇表相符 - 这不是错误。
+      
+      如果您发现真实问题，请以JSON格式返回，包含以下字段：
+      - file_path：文件路径
+      - original：源文本中的问题部分
+      - translated：翻译中的问题部分
+      - reason：问题原因 

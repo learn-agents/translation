@@ -1,0 +1,59 @@
+# Игнорирование конфиденциальных данных
+.env
+*.env
+
+# Игнорирование кэшей и временных файлов Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Игнорирование виртуального окружения
+venv/
+env/
+ENV/
+.venv/
+
+# Игнорирование директории output (результаты перевода)
+output/
+*/output/
+
+# Игнорирование логов и временных файлов
+*.log
+*.tmp
+.DS_Store
+validation_report_*.json
+
+# Игнорирование настроек IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# Игнорирование локальных тестовых файлов
+test_*
+local_*
+
+# Игнорирование специфичных для Windows файлов
+Thumbs.db
+ehthumbs.db
+Desktop.ini 

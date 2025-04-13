@@ -1,0 +1,48 @@
+terms:
+  промпт:
+    en: "prompt"
+    ru: "промпт"
+    zh: "提示词"
+    es: "prompt"
+  
+  токен:
+    en: "token"
+    ru: "токен"
+    zh: "令牌"
+    es: "token"
+  
+  фронтматтер:
+    en: "frontmatter"
+    ru: "фронтматтер"
+    zh: "前置元数据"
+    es: "frontmatter"
+  
+  промпт-инжиниринг:
+    en: "prompt engineering"
+    ru: "промпт-инжиниринг"
+    zh: "提示词工程"
+    es: "ingeniería de prompts"
+    
+  бэкенд:
+    en: "backend"
+    ru: "бэкенд"
+    zh: "后端"
+    es: "backend"
+    
+  фронтенд:
+    en: "frontend"
+    ru: "фронтенд"
+    zh: "前端"
+    es: "frontend"
+    
+  докер:
+    en: "Docker"
+    ru: "докер"
+    zh: "Docker容器"
+    es: "Docker"
+    
+  продакшн:
+    en: "production"
+    ru: "продакшн"
+    zh: "生产环境"
+    es: "producción"
