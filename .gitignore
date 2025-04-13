@@ -30,9 +30,17 @@ env/
 ENV/
 .venv/
 
-# Игнорирование директории output (результаты перевода)
-output/
-*/output/
+# Игнорирование содержимого директории input (исходные файлы)
+input/*
+*/input/*
+!input/.gitkeep
+!*/input/.gitkeep
+
+# Игнорирование содержимого директории output (результаты перевода)
+output/*
+*/output/*
+!output/.gitkeep
+!*/output/.gitkeep
 
 # Игнорирование логов и временных файлов
 *.log
