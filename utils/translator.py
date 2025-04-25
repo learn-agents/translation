@@ -71,7 +71,7 @@ class Translator:
                     {"role": "system", "content": enhanced_system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=0.3
+                temperature=0.0
             )
             translated_text = response.choices[0].message.content
             

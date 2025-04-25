@@ -2,12 +2,12 @@
 
 # Общие настройки
 general:
-  max_tokens: 8000   # Максимальное количество токенов для разбиения
+  max_tokens: 4000   # Максимальное количество токенов для разбиения
   max_workers: 4     # Количество параллельных потоков
 
 # Настройки API
 api:
-  model_name: "gpt-4o-mini"
+  model_name: "gemini/gemini-2.0-flash"
   base_url: "https://proxy.merkulov.ai"
 
 # Настройки языков

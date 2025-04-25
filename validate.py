@@ -85,7 +85,7 @@ def validate_translation(original_text: str, translated_text: str, target_langua
                 {"role": "system", "content": enhanced_system_prompt},
                 {"role": "user", "content": user_message}
             ],
-            temperature=0.1,  # Уменьшаем температуру для более предсказуемых результатов
+            temperature=0.0,  # Уменьшаем температуру для более предсказуемых результатов
             response_format={"type": "json_object"},  # Указываем формат ответа как JSON
             max_tokens=2000
         )

@@ -1,0 +1,1 @@
+- change sych LLM calls to async (they're cheaper)

@@ -1,4 +1,5 @@
 import os
+import re
 import argparse
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -53,6 +54,11 @@ def process_file(file_path: str, rel_path: str, output_dir: str, target_language
         # Читаем содержимое файла
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
+        
+        # Удаляем блоки локального текста перед дальнейшей обработкой
+        # Используем флаг re.DOTALL, чтобы '.' соответствовал и переносам строк
+        content = re.sub(r"\{\s*/\*\s*LOCAL TEXT START\s*\*/\s*\}(.*?)\{\s*/\*\s*LOCAL TEXT END\s*\*/\s*\}", 
+                         "", content, flags=re.DOTALL | re.IGNORECASE)
         
         # Извлекаем фронтматтер
         has_frontmatter, frontmatter, main_content = extract_frontmatter(content)
