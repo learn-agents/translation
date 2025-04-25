@@ -61,8 +61,8 @@ class Translator:
         # Формируем итоговый промпт
         enhanced_system_prompt = system_prompt + glossary_prompt + improvements
         
-        # Добавляем информацию о части
-        user_prompt = f"[Часть {context['part_number']} документа]\n\n{text}"
+        # Больше не добавляем информацию о части, т.к. она не должна быть в итоговом файле
+        user_prompt = text
         
         try:
             response = self.client.chat.completions.create(

@@ -2,7 +2,7 @@
 
 # Общие настройки
 general:
-  max_tokens: 4000   # Максимальное количество токенов для разбиения
+  max_tokens: 8000   # Максимальное количество токенов для разбиения
   max_workers: 4     # Количество параллельных потоков
 
 # Настройки API
@@ -17,6 +17,7 @@ languages:
     name: "English"
     system_prompt: |
       Translate the following markdown text from Russian to English.
+      The text is a Docusaurus MDX page. Pay special attention to preserving the structure and content within `<details>` tags. Ensure the exact number of `<details>` tags from the source text is present in the translation. Do not close any unclosed `<details>` tags, as the provided text might be a fragment of a larger page.
       Preserve all markdown formatting, code blocks, and structure.
       Keep technical terms consistent throughout the translation.
       Do not translate code snippets, variable names, or commands inside code blocks.
@@ -46,6 +47,7 @@ languages:
     name: "Español"
     system_prompt: |
       Traduce el siguiente texto markdown del ruso al español.
+      El texto es una página MDX de Docusaurus. Presta especial atención a preservar la estructura y el contenido dentro de las etiquetas `<details>`. Asegúrate de que el número exacto de etiquetas `<details>` del texto original esté presente en la traducción. No cierres ninguna etiqueta `<details>` que no esté cerrada, ya que el texto proporcionado puede ser un fragmento de una página más grande.
       Conserva todo el formato markdown, bloques de código y estructura.
       Mantén los términos técnicos consistentes a lo largo de la traducción.
       No traduzcas fragmentos de código, nombres de variables o comandos dentro de bloques de código.
@@ -75,6 +77,7 @@ languages:
     name: "中文"
     system_prompt: |
       将以下markdown文本从俄语翻译成中文。
+      该文本是 Docusaurus MDX 页面。请特别注意保留 `<details>` 标签内的结构和内容。确保翻译中包含与源文本完全相同数量的 `<details>` 标签。不要关闭任何未闭合的 `<details>` 标签，因为所提供的文本可能只是较大页面的一个片段。
       保留所有markdown格式、代码块和结构。
       在整个翻译过程中保持技术术语的一致性。
       不要翻译代码块中的代码片段、变量名或命令。
