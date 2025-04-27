@@ -159,10 +159,10 @@ def parse_arguments():
         argparse.Namespace: Объект с аргументами
     """
     parser = argparse.ArgumentParser(description='Система автоматизированного перевода документации')
-    # Добавляем 'all' в список допустимых языков
+    # Добавляем 'all' в список допустимых языков и используем zh вместо de
     parser.add_argument('--language', type=str, default='en', 
-                        choices=['en', 'es', 'de', 'all'], # Добавлены de и all
-                        help='Целевой язык перевода (en, es, de) или \'all\' для всех трех')
+                        choices=['en', 'es', 'zh', 'all'], # Используем en, es, zh, all
+                        help='Целевой язык перевода (en, es, zh) или \'all\' для всех трех')
     parser.add_argument('--input_dir', type=str, default='input', help='Директория с исходными файлами')
     parser.add_argument('--output_dir', type=str, default='output', help='Директория для сохранения результатов')
     parser.add_argument('--log_level', type=str, default='INFO', 
@@ -197,7 +197,7 @@ def main():
     
     # Определяем целевые языки
     if args.language == 'all':
-        target_languages = ['en', 'de', 'es']
+        target_languages = ['en', 'es', 'zh'] # Используем en, es, zh
     else:
         target_languages = [args.language]
         
