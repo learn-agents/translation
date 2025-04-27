@@ -15,6 +15,9 @@ from utils import (
     translate_frontmatter, Translator
 )
 
+# Добавляем глобальный счетчик токенов для всех языков
+global_total_tokens_processed = 0
+
 def process_file(file_path: str, rel_path: str, output_dir: str, target_language: str,
                  translator: Translator, max_tokens: int) -> bool:
     """
@@ -106,7 +109,7 @@ def process_file(file_path: str, rel_path: str, output_dir: str, target_language
         return False
 
 def process_directory(input_dir: str, output_dir: str, target_language: str, 
-                     translator: Translator, max_tokens: int, max_workers: int) -> None:
+                     translator: Translator, max_tokens: int, max_workers: int) -> int:
     """
     Рекурсивно обрабатывает все файлы в директории.
     
@@ -133,16 +136,20 @@ def process_directory(input_dir: str, output_dir: str, target_language: str,
     os.makedirs(lang_output_dir, exist_ok=True)
     
     # Обрабатываем файлы параллельно
+    total_tokens_for_lang = 0
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        results = list(executor.map(
-            lambda args: process_file(args[0], args[1], output_dir, target_language, translator, max_tokens),
-            all_files
-        ))
+        futures = [
+            executor.submit(process_file, args[0], args[1], output_dir, target_language, translator, max_tokens)
+            for args in all_files
+        ]
+        results = [f.result() for f in futures] # Используем f.result() для получения результатов или исключений
     
     # Подводим итоги
     success_count = results.count(True)
-    log_info(f"Обработка завершена. Успешно: {success_count}/{len(all_files)}")
-    log_info(f"Общее количество обработанных токенов: ~{int(translator.get_total_tokens()):,}")
+    total_tokens_for_lang = translator.get_total_tokens() # Получаем токены от этого экземпляра
+    log_info(f"Обработка для языка '{target_language}' завершена. Успешно: {success_count}/{len(all_files)}")
+    log_info(f"Количество токенов для языка '{target_language}': ~{int(total_tokens_for_lang):,}")
+    return total_tokens_for_lang # Возвращаем токены, обработанные этим языком
 
 def parse_arguments():
     """
@@ -152,7 +159,10 @@ def parse_arguments():
         argparse.Namespace: Объект с аргументами
     """
     parser = argparse.ArgumentParser(description='Система автоматизированного перевода документации')
-    parser.add_argument('--language', type=str, default='en', help='Целевой язык перевода (en, es, zh)')
+    # Добавляем 'all' в список допустимых языков
+    parser.add_argument('--language', type=str, default='en', 
+                        choices=['en', 'es', 'de', 'all'], # Добавлены de и all
+                        help='Целевой язык перевода (en, es, de) или \'all\' для всех трех')
     parser.add_argument('--input_dir', type=str, default='input', help='Директория с исходными файлами')
     parser.add_argument('--output_dir', type=str, default='output', help='Директория для сохранения результатов')
     parser.add_argument('--log_level', type=str, default='INFO', 
@@ -170,6 +180,9 @@ CONFIG = load_config()
 
 def main():
     """Основная функция для запуска процесса перевода."""
+    global global_total_tokens_processed # Используем глобальный счетчик
+    global_total_tokens_processed = 0    # Сбрасываем перед запуском
+    
     # Разбор аргументов командной строки
     args = parse_arguments()
     
@@ -177,48 +190,56 @@ def main():
     setup_logging(args.log_level, args.log_file)
     
     # Получаем параметры из конфигурации и аргументов
-    target_language = args.language
     input_dir = args.input_dir
     output_dir = args.output_dir
     max_tokens = args.max_tokens or CONFIG.get("general", {}).get("max_tokens", 8000)
     max_workers = args.max_workers or CONFIG.get("general", {}).get("max_workers", 4)
     
-    # Логирование начальной информации
-    log_info(f"Запуск перевода с параметрами:")
-    log_info(f"  Язык: {target_language}")
-    log_info(f"  Входная директория: {input_dir}")
-    log_info(f"  Выходная директория: {output_dir}")
-    log_info(f"  Макс. токенов: {max_tokens}")
-    log_info(f"  Макс. потоков: {max_workers}")
+    # Определяем целевые языки
+    if args.language == 'all':
+        target_languages = ['en', 'de', 'es']
+    else:
+        target_languages = [args.language]
+        
+    log_info(f"Целевые языки: {', '.join(target_languages)}")
+    log_info(f"Входная директория: {input_dir}")
+    log_info(f"Выходная директория: {output_dir}")
+    log_info(f"Макс. токенов для разбиения: {max_tokens}")
+    log_info(f"Макс. потоков: {max_workers}")
     
     # Проверяем наличие входной директории
     if not os.path.exists(input_dir):
         log_error(f"Входная директория '{input_dir}' не найдена")
         return
     
-    # Создаем выходную директорию, если она не существует
+    # Создаем общую выходную директорию, если она не существует
     os.makedirs(output_dir, exist_ok=True)
     
     # Загрузка глоссария
     glossary = load_glossary()
     
-    # Инициализация клиента OpenAI
+    # Инициализация клиента OpenAI (делаем один раз)
     client = OpenAI(
         api_key=os.getenv("OPENAI_API_KEY"),
         base_url=CONFIG.get("api", {}).get("base_url", os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"))
     )
-    
-    # Получение названия модели из конфигурации
     model_name = CONFIG.get("api", {}).get("model_name", os.getenv("MODEL_NAME", "gpt-4o-mini"))
     
-    # Создаем экземпляр переводчика
-    translator = Translator(client, model_name, glossary)
-    
-    # Запускаем обработку директории
-    log_info(f"Начинаем перевод файлов из '{input_dir}' на язык '{target_language}'")
-    process_directory(input_dir, output_dir, target_language, translator, max_tokens, max_workers)
-    log_info("Перевод завершен")
-    log_info(f"Итого обработано: ~{int(translator.get_total_tokens()):,} токенов")
+    # Цикл по целевым языкам
+    for target_language in target_languages:
+        log_info(f"Начинаем перевод файлов из '{input_dir}' на язык '{target_language}'")
+        
+        # Создаем экземпляр переводчика для каждого языка (чтобы счетчик токенов был свой)
+        translator = Translator(client, model_name, glossary)
+        
+        # Запускаем обработку директории для текущего языка
+        tokens_for_lang = process_directory(input_dir, output_dir, target_language, translator, max_tokens, max_workers)
+        global_total_tokens_processed += tokens_for_lang # Добавляем токены к общему счетчику
+        
+        log_info(f"Перевод на язык '{target_language}' завершен.")
+
+    log_info("Весь процесс перевода завершен.")
+    log_info(f"Итого обработано токенов по всем языкам: ~{int(global_total_tokens_processed):,}")
 
 if __name__ == "__main__":
     main() 
